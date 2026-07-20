@@ -1409,3 +1409,77 @@ form.contact-form {
     padding: 56px 0;
   }
 }
+
+/* =========================================================
+   Login
+   ========================================================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg-alt);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.auth-card .logo {
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 26px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-error {
+  display: none;
+  background: color-mix(in srgb, #dc2626 12%, transparent);
+  color: #b91c1c;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.auth-error.visible {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .auth-error {
+    color: #f87171;
+  }
+}
+
+.auth-note {
+  margin-top: 22px;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  text-align: center;
+}

@@ -2,6 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<script>
+  if (sessionStorage.getItem('ltech_auth') !== '1') {
+    window.location.replace('login.html');
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serviços — LTech</title>
 <meta name="description" content="Formatação, troca de SSD/HD, limpeza e pasta térmica, montagem de PCs gamers e manutenção de consoles. Conheça os serviços da LTech.">
@@ -26,6 +31,7 @@
         <li><a href="servicos.html">Serviços</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="contato.html">Contato</a></li>
+        <li><a href="#" id="logout-link">Sair</a></li>
       </ul>
       <div class="nav-cta">
         <a href="servicos.html" class="btn btn-outline btn-sm">Ver serviços</a>

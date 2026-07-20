@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<script>
+  if (sessionStorage.getItem('ltech_auth') === '1') {
+    window.location.replace('index.html');
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar — LTech</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/logo-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+
+<div class="auth-card">
+  <a href="login.html" class="logo">
+    <div class="photo-frame photo-frame-sm">
+      <div class="photo-frame-inner">
+        <img src="images/logo-icon.png" alt="LTech Informática" class="logo-mark">
+      </div>
+    </div>
+    LTech
+  </a>
+
+  <h1 class="auth-title">Área restrita</h1>
+  <p class="auth-subtitle">Entre com suas credenciais para acessar o site.</p>
+
+  <div class="auth-error" id="auth-error">Usuário ou senha inválidos.</div>
+
+  <form class="auth-form" id="login-form">
+    <div class="field">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" name="username" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+  </form>
+
+  <p class="auth-note">Acesso restrito à equipe LTech.</p>
+</div>
+
+<script>
+  document.getElementById('login-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var username = document.getElementById('username').value.trim();
+    var password = document.getElementById('password').value;
+    var errorBox = document.getElementById('auth-error');
+
+    if (username === 'admin' && password === '123123') {
+      sessionStorage.setItem('ltech_auth', '1');
+      window.location.replace('index.html');
+    } else {
+      errorBox.classList.add('visible');
+    }
+  });
+</script>
+
+</body>
+</html>

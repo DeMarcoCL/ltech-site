@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initFaq();
   initProductFilters();
   initContactForm();
+  initLogout();
 });
 
 // Marca o link do menu correspondente à página atual
@@ -90,6 +91,18 @@ function initProductFilters() {
         card.style.display = match ? "" : "none";
       });
     });
+  });
+}
+
+// Encerra a sessão local e volta para a tela de login
+function initLogout() {
+  var link = document.getElementById("logout-link");
+  if (!link) return;
+
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    sessionStorage.removeItem("ltech_auth");
+    window.location.replace("login.html");
   });
 }
 
