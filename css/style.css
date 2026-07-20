@@ -978,37 +978,17 @@ p {
   }
 }
 
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* Minimal frame variant — single accent tone, slow spin, no glow (reuses base .photo-frame gradient) */
+
+.photo-frame-minimal {
+  width: 100%;
+  padding: 3px;
+  border-radius: calc(var(--radius-md) + 3px);
 }
 
-.timeline-item {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 20px;
-  padding: 22px 0;
-  border-top: 1px solid var(--border);
-}
-
-.timeline-item:last-child {
-  border-bottom: 1px solid var(--border);
-}
-
-.timeline-item .year {
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.timeline-item h3 {
-  font-size: 0.98rem;
-  margin-bottom: 6px;
-}
-
-.timeline-item p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+.photo-frame-minimal .photo-frame-inner {
+  border-radius: var(--radius-md);
+  height: 100%;
 }
 
 /* ---------- Contato ---------- */
