@@ -8,7 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
   initProductFilters();
   initContactForm();
   initLogout();
+  initDepoimentos();
+  initDepoimentoForm();
 });
+
+// Depoimentos reais publicados no site.
+// Para adicionar um novo depois que o cliente enviar pelo formulário,
+// inclua um objeto neste array no formato abaixo:
+// { nome: "Nome Completo", contexto: "Cliente notebook", texto: "Texto do depoimento.", nota: 5 }
+var depoimentos = [];
 
 // Marca o link do menu correspondente à página atual
 function setActiveNavLink() {
@@ -103,6 +111,83 @@ function initLogout() {
     event.preventDefault();
     sessionStorage.removeItem("ltech_auth");
     window.location.replace("login.html");
+  });
+}
+
+// Renderiza os depoimentos reais (ou uma mensagem convidando o primeiro)
+function initDepoimentos() {
+  var grid = document.getElementById("depoimentos-grid");
+  if (!grid) return;
+
+  if (!depoimentos.length) {
+    grid.innerHTML =
+      '<div class="quote-card" style="grid-column:1/-1;text-align:center;">' +
+      "<p>Ainda não temos depoimentos publicados. Seja a primeira pessoa a contar sua experiência com a LTech!</p>" +
+      "</div>";
+    return;
+  }
+
+  grid.innerHTML = depoimentos
+    .map(function (d) {
+      var initials = d.nome
+        .split(" ")
+        .map(function (p) {
+          return p[0];
+        })
+        .slice(0, 2)
+        .join("")
+        .toUpperCase();
+
+      var stars = "";
+      for (var i = 0; i < 5; i++) {
+        stars +=
+          '<svg class="icon" viewBox="0 0 24 24"' +
+          (i < d.nota ? "" : ' style="opacity:0.25;"') +
+          '><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>';
+      }
+
+      return (
+        '<div class="quote-card">' +
+        '<div class="stars">' + stars + "</div>" +
+        "<p>&quot;" + d.texto + "&quot;</p>" +
+        '<div class="quote-author">' +
+        '<span class="avatar">' + initials + "</span>" +
+        "<div><strong>" + d.nome + "</strong><span>" + d.contexto + "</span></div>" +
+        "</div>" +
+        "</div>"
+      );
+    })
+    .join("");
+}
+
+// Formulário de depoimento: monta uma mensagem e abre o WhatsApp
+function initDepoimentoForm() {
+  var form = document.getElementById("depoimento-form");
+  if (!form) return;
+
+  var whatsappNumber = "5500000000000"; // TODO: substituir pelo número real (com DDI+DDD)
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var nome = form.querySelector("#dep-nome").value.trim();
+    var servico = form.querySelector("#dep-servico").value;
+    var nota = form.querySelector("#dep-nota").value;
+    var texto = form.querySelector("#dep-texto").value.trim();
+
+    var mensagem =
+      "Olá, LTech! Quero deixar um depoimento. Nome: " + nome +
+      ". Serviço: " + servico +
+      ". Nota: " + nota + " estrelas" +
+      ". Depoimento: " + texto;
+
+    var url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(mensagem);
+
+    var successBox = document.getElementById("depoimento-success");
+    if (successBox) successBox.classList.add("visible");
+
+    window.open(url, "_blank");
+    form.reset();
   });
 }
 

@@ -59,10 +59,6 @@
         </div>
         <div class="hero-stats">
           <div>
-            <strong>+500</strong>
-            <span>equipamentos atendidos</span>
-          </div>
-          <div>
             <strong>PC · Notebook</strong>
             <span>e console</span>
           </div>
@@ -174,58 +170,53 @@
       <div class="section-head center">
         <span class="eyebrow">Depoimentos</span>
         <h2>Quem confiou, recomenda</h2>
+        <p>Avaliações reais de quem já usou os serviços da LTech.</p>
       </div>
-      <div class="grid grid-3">
-        <div class="quote-card">
-          <div class="stars">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
+
+      <div class="grid grid-3" id="depoimentos-grid"></div>
+
+      <div style="max-width:560px;margin:48px auto 0;">
+        <div class="card" style="text-align:center;">
+          <h3 style="margin-bottom:6px;">Já usou nossos serviços?</h3>
+          <p style="color:var(--text-muted);margin-bottom:22px;">Conte sua experiência — seu depoimento pode ajudar outras pessoas a confiar na LTech.</p>
+
+          <div class="form-success" id="depoimento-success">
+            <svg class="icon" viewBox="0 0 24 24" style="width:18px;height:18px;"><polyline points="20 6 9 17 4 12"/></svg>
+            Obrigado! Recebemos seu depoimento pelo WhatsApp e, após revisão, ele pode aparecer aqui.
           </div>
-          <p>"Meu notebook estava travando toda hora. Trocaram a pasta térmica e o SSD, ficou muito mais rápido."</p>
-          <div class="quote-author">
-            <span class="avatar">RM</span>
-            <div>
-              <strong>Rafael M.</strong>
-              <span>Cliente notebook</span>
+
+          <form class="auth-form" id="depoimento-form" style="text-align:left;">
+            <div class="field">
+              <label for="dep-nome">Nome</label>
+              <input type="text" id="dep-nome" name="dep-nome" placeholder="Seu nome" required>
             </div>
-          </div>
-        </div>
-        <div class="quote-card">
-          <div class="stars">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-          </div>
-          <p>"Mandei meu PS5 para limpeza e troca de pasta térmica, o barulho do cooler sumiu completamente."</p>
-          <div class="quote-author">
-            <span class="avatar">CS</span>
-            <div>
-              <strong>Camila S.</strong>
-              <span>Cliente console</span>
+            <div class="field">
+              <label for="dep-servico">Serviço utilizado</label>
+              <select id="dep-servico" name="dep-servico">
+                <option value="Formatação/limpeza">Formatação/limpeza</option>
+                <option value="Troca de peça (SSD/RAM)">Troca de peça (SSD/RAM)</option>
+                <option value="Montagem de PC">Montagem de PC</option>
+                <option value="Compra de computador/notebook">Compra de computador/notebook</option>
+                <option value="Manutenção de console">Manutenção de console</option>
+                <option value="Outro">Outro</option>
+              </select>
             </div>
-          </div>
-        </div>
-        <div class="quote-card">
-          <div class="stars">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg>
-          </div>
-          <p>"Pedi um PC gamer dentro do meu orçamento e ficaram sinceros sobre o que valia a pena comprar."</p>
-          <div class="quote-author">
-            <span class="avatar">JT</span>
-            <div>
-              <strong>João T.</strong>
-              <span>Cliente PC gamer</span>
+            <div class="field">
+              <label for="dep-nota">Nota</label>
+              <select id="dep-nota" name="dep-nota">
+                <option value="5">5 estrelas</option>
+                <option value="4">4 estrelas</option>
+                <option value="3">3 estrelas</option>
+                <option value="2">2 estrelas</option>
+                <option value="1">1 estrela</option>
+              </select>
             </div>
-          </div>
+            <div class="field">
+              <label for="dep-texto">Seu depoimento</label>
+              <textarea id="dep-texto" name="dep-texto" placeholder="Conte como foi sua experiência com a LTech." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Enviar depoimento</button>
+          </form>
         </div>
       </div>
     </div>
@@ -294,7 +285,6 @@
         <ul>
           <li><a href="tel:+5500000000000">(00) 00000-0000</a></li>
           <li><a href="mailto:contato@ltech.com.br">contato@ltech.com.br</a></li>
-          <li><a href="contato.html">Ver endereço</a></li>
         </ul>
       </div>
     </div>

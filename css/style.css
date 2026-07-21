@@ -1026,28 +1026,6 @@ p {
   color: var(--accent);
 }
 
-.map-placeholder {
-  margin-top: 8px;
-  aspect-ratio: 16/10;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-soft);
-  flex-direction: column;
-  gap: 8px;
-  font-size: 0.85rem;
-  text-align: center;
-  padding: 20px;
-}
-
-.map-placeholder .icon {
-  width: 30px;
-  height: 30px;
-}
-
 form.contact-form {
   background: var(--bg);
   border: 1px solid var(--border);
