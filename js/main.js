@@ -165,7 +165,7 @@ function initDepoimentoForm() {
   var form = document.getElementById("depoimento-form");
   if (!form) return;
 
-  var whatsappNumber = "5500000000000"; // TODO: substituir pelo número real (com DDI+DDD)
+  var whatsappNumber = "5519992667034";
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -196,7 +196,7 @@ function initContactForm() {
   var form = document.querySelector(".contact-form");
   if (!form) return;
 
-  var whatsappNumber = "5500000000000"; // TODO: substituir pelo número real (com DDI+DDD)
+  var whatsappNumber = "5519992667034";
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
